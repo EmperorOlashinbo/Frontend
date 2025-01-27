@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire's Book Store</title>
+    <link rel="stylesheet" href="seminar_1.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<script defer src="main.js"></script>
+</head>
+<body>
+<div class="container">
+    <nav class="sidebar">
+        <button type="button" id="toggle-btn">
+            <i class="fa fa-bars"></i>
+        </button>
+        <span>Empire's Book Store</span>
+        <ul class="sidebar-menu">
+            <li><a href="#Home"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#Books"><i class="fa fa-book"></i>Books</a></li>
+            <li>
+                <a href="#Categories"><i class="fa fa-list"></i>Categories</a>
+                <ul class="categories">
+                    <li><a href="#Children">Children</a></li>
+                    <li><a href="#Fiction">Fiction</a></li>
+                    <li><a href="#Non-Fiction">Non-Fiction</a></li>
+                    <li><a href="#History">History</a></li>
+                    <li><a href="#Science">Science</a></li>
+                    <li><a href="#Art">Art</a></li>
+                    <li><a href="#Biography">Biography</a></li>
+                </ul>
+            </li>
+            <li><a href="#Cart"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+            <li><a href="#Contact"><i class="fa fa-envelope"></i>Contact</a></li>
+            <li id="bgModeBtn"><a href="#"><i id="bgModeIcon" class="fa fa-sun-o"></i>Mode</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Book Store Logo" width="10%" height="10%">
+                <nav class="nav-links">
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#LimitedEditions">Limited Editions</a></li>
+                        <li><a href="#Shops">Shops</a></li>
+                        <li><a href="#Event">Event</a></li>
+                        <li><a href="#Gifts">Gifts</a></li>
+                        <li><a href="#About">About Us</a></li>
+                        <li><a href="#NewsLetter">News Letter</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <img src="marylebone_edited.jpg" width="1230" height="200" alt="Header Image">
+        </div>
+    </header>     
+        <main class="main">
+            <section class="book-grid">
+                <div class="book-card">
+                    <img src="petter-pan_book.webp" alt="Petter Pan" width="150" height="200">
+                    <h3>Petter Pan</h3>
+                    <p>Author: J. M. Barrie</p>
+                    <p>Price: $22</p>
+                    <p>ISBN: 978-98-577-1771-4</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="anne-frank_book.webp" alt="Where Is Anne Frank" width="150" height="200">
+                    <h3>Where Is Anne Frank</h3>
+                    <p>Author: Eine Graphic Novel</p>
+                    <p>Price: $21</p>
+                    <p>ISBN: 978-98-577-1771-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="hot-dog_book.webp" alt="Hot Dog" width="150" height="200">
+                    <h3>Hot Dog</h3>
+                    <p>Author: Doug Salati</p>
+                    <p>Price: $18</p>
+                    <p>ISBN: 978-98-577-1771-5</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="under-sea_book.webp" alt="Under the Sea" width="150" height="200">
+                    <h3>Under the Sea</h3>
+                    <p>Author: Anna Milbourne</p>
+                    <p>Price: $11</p>
+                    <p>ISBN: 978-98-577-1771-3</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="wild-things_book.webp" alt="Where the Wild Things are" width="150" height="200">
+                    <h3>Where the Wild Things are</h3>
+                    <p>Author: Maurice Sendak</p>
+                    <p>Price: $17</p>
+                    <p>ISBN: 978-98-577-1771-3</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="grumpy-monkey_book.webp" alt="Grumpy Monkey" width="150" height="200">
+                    <h3>Grumpy Monkey</h3>
+                    <p>Author: Suzanne Lang</p>
+                    <p>Price: $12</p>
+                    <p>ISBN: 978-98-577-1771-2</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="seven-silly_book.webp" alt="The Seven Silly Eaters" width="150" height="200">
+                    <h3>The Seven Silly Eaters</h3>
+                    <p>Author: Hoberman Mary Ann</p>
+                    <p>Price: $10</p>
+                    <p>ISBN: 978-98-577-1771-8</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="wild-robbot_book.webp" alt="The Wild Robot On The Island" width="150" height="200">
+                    <h3>The Wild Robot On The Island</h3>
+                    <p>Author: Peter Brown</p>
+                    <p>Price: $12</p>
+                    <p>ISBN: 978-98-577-1774-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="grown-ups_book.jpg" alt="THE GROWN-UP'S" width="150" height="200">
+                    <h3>THE GROWN-UP'S</h3>
+                    <p>Author: Lara Cain Gray</p>
+                    <p>Price: $13</p>
+                    <p>ISBN: 978-98-577-1779-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="writting_book.jpg" alt="Writing Picture Book" width="150" height="200">
+                    <h3>Writing Picture Book</h3>
+                    <p>Author: Ann Whitford Paul</p>
+                    <p>Price: $14</p>
+                    <p>ISBN: 978-98-577-1773-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="science_book.webp" alt="The Science of Racism" width="150" height="200">
+                    <h3>The Science of Racism</h3>
+                    <p>Author: Keon West</p>
+                    <p>Price: $28</p>
+                    <p>ISBN: 978-98-577-1769-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+                <div class="book-card">
+                    <img src="Butter_book.webp" alt="Butter" width="150" height="200">
+                    <h3>Butter</h3>
+                    <p>Author: Asako Yuzuki</p>
+                    <p>Price: $19</p>
+                    <p>ISBN: 978-98-577-1773-7</p>
+                    <button>Add Book</button><br>
+                    <input type="Quantity" placeholder="Enter Quantity">
+                    <a href="cart.html" class="buy-button">Buy</a>
+                </div>
+            </section>
+        </main>
+        <footer class="footer"> <p>&copy; 2025 empirebookstore.se All rights reserved<address>Empire's Book Store <br>Kristianstad, Sweden <br> <a href="mailto:ib.olasunbo@gmail.com">ib.olasunbo@gmail.com</a> <br>tel: 0793010026</address></p></footer>
+    </div>
+    
+</body>
+</html>
