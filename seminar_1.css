@@ -263,6 +263,9 @@ body.dark-mode {
     .book-grid{
         grid-template-columns: 1fr;
     }
+    .book-grid h2{
+        grid-column: span 1;
+    }
 }
 .cart-content{
     display: flex;
