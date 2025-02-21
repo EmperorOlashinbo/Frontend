@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postify - Share and Connect</title>
+    <link rel="stylesheet" href="seminar_2.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <div id="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search posts</button>
+            </div>
+        </nav>
+    </header>
+    <div id="loadingIndicator">Loading...</div>
+    <main>
+        <section id="home">
+            <h1>Welcome to Postify!</h1>
+            <article>
+                <p>
+                    Postify is a dynamic web application designed to help you share, connect, and engage with others through posts, user profiles, and comments. Whether you're sharing your thoughts, exploring posts from others, or interacting with the community, Postify provides a seamless and engaging experience.
+                </p>
+                <h2>Purpose</h2>
+                <p>
+                    Postify aims to create a platform where users can share posts, connect with others, and engage in conversations. Explore posts, view user profiles, and join discussions with the community.
+                </p>
+                <h2>Instructions for Users</h2>
+                <ul>
+                    <li><strong>Home</strong>: Start here to learn more about Postify and how to use the platform.</li>
+                    <li><strong>Posts</strong>: Explore posts from the community. Click on a username to view their profile. Use the "Load More" button to discover additional posts.</li>
+                    <li><strong>Contact</strong>: Have questions or feedback? Fill out the contact form, and we'll get back to you. Ensure all fields are filled out correctly, and confirm your submission before sending.</li>
+                    <li><strong>About</strong>: Learn more about Postify, its features, and its mission.</li>
+                </ul>
+                <h2>Get Started</h2>
+                <p>
+                    Create an account to start sharing your own posts and interacting with others. Explore posts, connect with users, and join the conversation today!
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Postify. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p>Follow us on <a href="https://twitter.com/postify" target="_blank">Twitter</a> | <a href="https://facebook.com/postify" target="_blank">Facebook</a></p>
+        <p>Subscribe to our newsletter for updates!</p>
+        <form id="newsletter-form" action="#" method="post">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscription-message" style="display: none;"></p>
+        <a href="#top" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+    </footer>
+</body>
+</html>

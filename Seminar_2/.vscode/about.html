@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Postify</title>
+    <link rel="stylesheet" href="seminar_2.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <div id="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search posts</button>
+            </div>
+        </nav>
+    </header>
+    <div id="loadingIndicator">Loading...</div>
+    <main>
+        <section id="about">
+            <h1>About Postify</h1>
+            <article>
+                <p>
+                    Postify is a dynamic web application designed to help you share, connect, and engage with others through posts, user profiles, and comments. Whether you're sharing your thoughts, exploring posts from others, or interacting with the community, Postify provides a seamless and engaging experience.
+                </p>
+                <h2>Our Purpose</h2>
+                <p>
+                    Postify aims to create a platform where users can:
+                </p>
+                <ul>
+                    <li><strong>Share Posts</strong>: Write and publish posts on topics that matter to you.</li>
+                    <li><strong>Connect with Others</strong>: Explore user profiles and learn more about the people behind the posts.</li>
+                    <li><strong>Engage in Conversations</strong>: Comment on posts and join discussions with the community.</li>
+                </ul>
+                <h2>How to Use Postify</h2>
+                <p>
+                    Here’s a quick guide to get started:
+                </p>
+                <ol>
+                    <li><strong>Home</strong>: Learn more about Postify and its features.</li>
+                    <li><strong>Posts</strong>: Explore posts from the community. Click on a username to view their profile. Use the "Load More" button to discover additional posts.</li>
+                    <li><strong>Contact</strong>: Have questions or feedback? Fill out the contact form, and we'll get back to you.</li>
+                    <li><strong>About</strong>: Learn more about Postify, its features, and its mission.</li>
+                </ol>
+                <h2>Why Choose Postify?</h2>
+                <p>
+                    Postify is more than just a platform—it's a space to share, connect, and grow. Here’s why you’ll love it:
+                </p>
+                <ul>
+                    <li><strong>User-Friendly</strong>: Simple and intuitive design for a seamless experience.</li>
+                    <li><strong>Engaging</strong>: Interact with posts, profiles, and comments to stay connected.</li>
+                    <li><strong>Dynamic</strong>: New posts and updates are always just a click away.</li>
+                </ul>
+                <p>
+                    Join the Postify community today and start sharing, connecting, and engaging!
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Postify. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p>Follow us on <a href="https://twitter.com/postify" target="_blank">Twitter</a> | <a href="https://facebook.com/postify" target="_blank">Facebook</a></p>
+        <p>Subscribe to our newsletter for updates!</p>
+        <form id="newsletter-form" action="#" method="post">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscription-message" style="display: none;"></p>
+        <a href="#top" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+    </footer>   
+</body>
+</html>
