@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Navigation Bar: Highlight Active Link
-    const currentPage = window.location.hash || "#home";
+    const currentPage = window.location.pathname.split('/').pop();
     const links = document.querySelectorAll("nav ul li a");
 
     links.forEach(link => {
@@ -232,4 +232,5 @@ document.addEventListener("DOMContentLoaded", function () {
             openUserModal(userId);
         }
     });
+
 });
