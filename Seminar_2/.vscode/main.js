@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let postPage = 1;
     const postsPerPage = 5;
     const postsContainer = document.getElementById("posts-container");
-    const loadMoreButton = document.getElementById("load-more");
+    const loadMoreTrigger = document.getElementById("load-more-trigger");
 
     // User Profile Modal: Variables
     const modal = document.getElementById("user-modal");
@@ -185,14 +185,25 @@ document.addEventListener("DOMContentLoaded", function () {
         posts.forEach(post => displayPost(post));
     }
 
-    // Load more posts when the "Load More" button is clicked
-    loadMoreButton.addEventListener("click", () => {
-        postPage++;
-        loadPosts();
-    });
+    // Setup infinite scroll
+    function setupInfiniteScroll() {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                postPage++;
+                loadPosts();
+            }
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        });
+
+        observer.observe(loadMoreTrigger);
+    }
 
     // Initial load of posts
     loadPosts();
+    setupInfiniteScroll();
 
     // Function to open the modal and display user details
     async function openUserModal(userId) {
@@ -232,5 +243,4 @@ document.addEventListener("DOMContentLoaded", function () {
             openUserModal(userId);
         }
     });
-
 });
