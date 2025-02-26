@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts - Postify</title>
+    <link rel="stylesheet" href="seminar_2.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="postify_logo_no_bg_1.png" alt="Postify Logo" width="80" height="100">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="posts.html" class="active">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search posts</button>
+        </div>
+    </header>
+    <div id="loadingIndicator">Loading...</div>
+    <main>
+        <section id="posts">
+            <h1>Posts</h1>
+            <div id="posts-container"></div>
+            <div id="load-more-trigger"></div>
+        </section>
+    </main>
+
+    <!-- User Profile Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>User Profile</h2>
+            <div id="user-details">
+                <!-- User details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Postify. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p>Follow us on <a href="https://twitter.com/postify" target="_blank">Twitter</a> | <a href="https://facebook.com/postify" target="_blank">Facebook</a></p>
+        <p>Subscribe to our newsletter for updates!</p>
+        <form id="newsletter-form" action="#" method="post">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscription-message" style="display: none;"></p>
+        <a href="#top" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+    </footer>
+    <!-- <script>
+        document.querySelector('.back-to-top').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script> -->
+</body>
+</html>
