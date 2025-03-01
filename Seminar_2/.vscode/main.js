@@ -159,16 +159,16 @@ document.addEventListener("DOMContentLoaded", function () {
     async function displayPost(post) {
         const user = await fetchUser(post.userId);
         const comments = await fetchComments(post.id);
-    
+
         const postElement = document.createElement("div");
         postElement.classList.add("post");
-    
+
         const titleElement = document.createElement("h2");
         titleElement.textContent = post.title;
-    
+
         const bodyElement = document.createElement("p");
         bodyElement.textContent = post.body;
-    
+
         const userElement = document.createElement("p");
         const userLabel = document.createElement("strong");
         userLabel.textContent = "Posted by: ";
@@ -179,40 +179,40 @@ document.addEventListener("DOMContentLoaded", function () {
         userLink.dataset.userId = post.userId;
         userLink.textContent = user ? user.username : "Unknown User";
         userElement.appendChild(userLink);
-    
+
         const userImage = document.createElement("img");
         userImage.src = user ? user.image : "default-user-image.png"; // Use a default image if user image is not available
         userImage.alt = user ? user.username : "Unknown User";
         userImage.classList.add("user-image");
         userElement.appendChild(userImage);
-    
+
         const tagsElement = document.createElement("p");
         tagsElement.classList.add("tags");
         const tagsLabel = document.createElement("strong");
         tagsLabel.textContent = "Tags: ";
         tagsElement.appendChild(tagsLabel);
         tagsElement.appendChild(document.createTextNode(post.tags.join(", ")));
-    
+
         const likesElement = document.createElement("p");
         likesElement.classList.add("reactions");
         const likesLabel = document.createElement("strong");
         likesLabel.textContent = "Reactions: 👍";
         likesElement.appendChild(likesLabel);
         likesElement.appendChild(document.createTextNode(post.reactions.likes));
-    
+
         const dislikesElement = document.createElement("p");
         dislikesElement.classList.add("reactions");
         const dislikesLabel = document.createElement("strong");
         dislikesLabel.textContent = "Reactions: 👎";
         dislikesElement.appendChild(dislikesLabel);
         dislikesElement.appendChild(document.createTextNode(post.reactions.dislikes));
-    
+
         const commentsElement = document.createElement("div");
         commentsElement.classList.add("comments");
         const commentsTitle = document.createElement("h3");
         commentsTitle.textContent = "💬Comments:";
         commentsElement.appendChild(commentsTitle);
-    
+
         if (comments.length > 0) {
             comments.forEach(comment => {
                 const commentElement = document.createElement("p");
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
             noCommentsElement.textContent = "No comments available.";
             commentsElement.appendChild(noCommentsElement);
         }
-    
+
         postElement.appendChild(titleElement);
         postElement.appendChild(bodyElement);
         postElement.appendChild(userElement);
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         postElement.appendChild(likesElement);
         postElement.appendChild(dislikesElement);
         postElement.appendChild(commentsElement);
-    
+
         postsContainer.appendChild(postElement);
     }
 
@@ -250,6 +250,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Setup infinite scroll
     function setupInfiniteScroll() {
+        const loadMoreTrigger = document.getElementById("load-more-trigger");
+        if (!loadMoreTrigger) {
+            console.error("loadMoreTrigger element not found");
+            return;
+        }
+
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 postPage++;
@@ -265,56 +271,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initial load of posts
-    loadPosts();
-    setupInfiniteScroll();
+    if (document.getElementById("posts-container")) {
+        loadPosts();
+        setupInfiniteScroll();
+    }
 
     // Function to open the modal and display user details
     async function openUserModal(userId) {
         const user = await fetchUser(userId);
-        userDetails.textContent = ""; 
-    
+        userDetails.textContent = ""; // Clear previous content
+
         if (user) {
             const userImage = document.createElement("img");
             userImage.src = user.image;
             userImage.alt = `${user.firstName} ${user.lastName}`;
             userImage.classList.add("user-image");
-    
+
             const nameElement = document.createElement("p");
             const nameLabel = document.createElement("strong");
             nameLabel.textContent = "Name: ";
             nameElement.appendChild(nameLabel);
             nameElement.appendChild(document.createTextNode(`${user.firstName} ${user.lastName}`));
-    
+
             const emailElement = document.createElement("p");
             const emailLabel = document.createElement("strong");
             emailLabel.textContent = "Email: ";
             emailElement.appendChild(emailLabel);
             emailElement.appendChild(document.createTextNode(user.email));
-    
+
             const addressElement = document.createElement("p");
             const addressLabel = document.createElement("strong");
             addressLabel.textContent = "Address: ";
             addressElement.appendChild(addressLabel);
             addressElement.appendChild(document.createTextNode(`${user.address.address}, ${user.address.city}, ${user.address.state}, ${user.address.postalCode}`));
-    
+
             const phoneElement = document.createElement("p");
             const phoneLabel = document.createElement("strong");
             phoneLabel.textContent = "Phone: ";
             phoneElement.appendChild(phoneLabel);
             phoneElement.appendChild(document.createTextNode(user.phone));
-    
+
             const ageElement = document.createElement("p");
             const ageLabel = document.createElement("strong");
             ageLabel.textContent = "Age: ";
             ageElement.appendChild(ageLabel);
             ageElement.appendChild(document.createTextNode(user.age));
-    
+
             const genderElement = document.createElement("p");
             const genderLabel = document.createElement("strong");
             genderLabel.textContent = "Gender: ";
             genderElement.appendChild(genderLabel);
             genderElement.appendChild(document.createTextNode(user.gender));
-    
+
             userDetails.appendChild(userImage);
             userDetails.appendChild(nameElement);
             userDetails.appendChild(emailElement);
@@ -322,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
             userDetails.appendChild(phoneElement);
             userDetails.appendChild(ageElement);
             userDetails.appendChild(genderElement);
-    
+
             modal.style.display = "block";
         } else {
             const errorElement = document.createElement("p");
@@ -333,9 +341,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Close the modal when the close button is clicked
-    closeModal.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
+    if (closeModal) {
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+    }
 
     // Close the modal when clicking outside the modal content
     window.addEventListener("click", function (event) {

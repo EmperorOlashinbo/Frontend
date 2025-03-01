@@ -4,5 +4,6 @@
         "scminput": true,
         "markdown": true,
         "plaintext": true
-    }
+    },
+    "liveServer.settings.CustomBrowser": "chrome"
 }

@@ -121,7 +121,6 @@ nav ul li a.active {
     font-weight: bold;
     color: #333;
 }
-
 #contact {
     padding: 20px;
     text-align: center;
@@ -228,6 +227,13 @@ nav ul li a.active {
     font-size: 1.1em;
 }
 
+#loadingIndicator {
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #333;
+}
 #about {
 
     padding: 20px;
