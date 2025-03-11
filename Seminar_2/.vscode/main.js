@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Contact Form Logic
+    // Contact Form: Validation
     const contactForm = document.getElementById("contact-form");
     if (contactForm) {
         const nameInput = document.getElementById("name");
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Validate inputs on the fly
+        // Validate inputs on the
         nameInput.addEventListener("input", validateName);
         emailInput.addEventListener("input", validateEmail);
         messageInput.addEventListener("input", validateMessage);
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const userElement = document.createElement("p");
         const userLabel = document.createElement("strong");
         userLabel.textContent = "Posted by: ";
-        userElement.appendChild(userLabel);
+        userElement.appendChild(userLabel); 
         const userLink = document.createElement("a");
         userLink.href = "#";
         userLink.classList.add("user-link");
@@ -193,19 +193,31 @@ document.addEventListener("DOMContentLoaded", function () {
         tagsElement.appendChild(tagsLabel);
         tagsElement.appendChild(document.createTextNode(post.tags.join(", ")));
 
+        const reactionsContainer = document.createElement("div");
+        reactionsContainer.classList.add("reactions-container");
+
         const likesElement = document.createElement("p");
         likesElement.classList.add("reactions");
         const likesLabel = document.createElement("strong");
-        likesLabel.textContent = "Reactions: 👍";
+        likesLabel.textContent = "Likes: 👍";
         likesElement.appendChild(likesLabel);
         likesElement.appendChild(document.createTextNode(post.reactions.likes));
+        reactionsContainer.appendChild(likesElement);
 
         const dislikesElement = document.createElement("p");
         dislikesElement.classList.add("reactions");
         const dislikesLabel = document.createElement("strong");
-        dislikesLabel.textContent = "Reactions: 👎";
+        dislikesLabel.textContent = "Dislikes: 👎";
         dislikesElement.appendChild(dislikesLabel);
         dislikesElement.appendChild(document.createTextNode(post.reactions.dislikes));
+        reactionsContainer.appendChild(dislikesElement);
+
+        const viewsElement = document.createElement("p");
+        viewsElement.classList.add("views");
+        const viewsLabel = document.createElement("strong");
+        viewsLabel.textContent = "Views: 👀";
+        viewsElement.appendChild(viewsLabel);
+        viewsElement.appendChild(document.createTextNode(post.views));
 
         const commentsElement = document.createElement("div");
         commentsElement.classList.add("comments");
@@ -235,8 +247,8 @@ document.addEventListener("DOMContentLoaded", function () {
         postElement.appendChild(bodyElement);
         postElement.appendChild(userElement);
         postElement.appendChild(tagsElement);
-        postElement.appendChild(likesElement);
-        postElement.appendChild(dislikesElement);
+        postElement.appendChild(reactionsContainer);
+        postElement.appendChild(viewsElement);
         postElement.appendChild(commentsElement);
 
         postsContainer.appendChild(postElement);

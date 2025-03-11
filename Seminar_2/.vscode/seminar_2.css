@@ -116,11 +116,20 @@ nav ul li a.active {
     font-style: italic;
     color: #555;
 }
+.reactions-container {
+    display: flex;
+    gap: 10px;
+}
 
 .post .reactions {
     font-weight: bold;
     color: #333;
 }
+
+.post .reactions strong {
+    margin: 0;
+}
+
 #contact {
     padding: 20px;
     text-align: center;
