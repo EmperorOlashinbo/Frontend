@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.classList.remove("active");
         }
     });
+    
 
     // Contact Form: Validation
     const contactForm = document.getElementById("contact-form");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nameInput = document.getElementById("name");
         const emailInput = document.getElementById("email");
         const messageInput = document.getElementById("message");
+
         const confirmCheckbox = document.getElementById("confirm");
         const sendButton = document.getElementById("send-button");
         const nameError = document.getElementById("name-error");
@@ -57,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validate message (must not be empty)
         function validateMessage() {
             const messageValue = messageInput.value.trim();
+            const countElement = document.createElement("span");
+            countElement.id = "span-count";
+            const count = messageValue.length;
+
+            countElement.innerText = count;
+            console.log(`${countElement.id} character count: ${count}`);
+            messageInput.parentNode.appendChild(countElement);
 
             if (messageValue === "") {
                 messageError.textContent = "Message cannot be empty.";
@@ -219,23 +228,35 @@ document.addEventListener("DOMContentLoaded", function () {
         viewsElement.appendChild(viewsLabel);
         viewsElement.appendChild(document.createTextNode(post.views));
 
+        //const showCommentsBtn = document.createElement("button");
+        //showCommentsBtn.textContent = "Show Comments";
+        //showCommentsBtn.setAttribute("data-postid", post.id);
+
         const commentsElement = document.createElement("div");
         commentsElement.classList.add("comments");
+        //commentsElement.setAttribute("data-postid", post.id);
+        //commentsElement.hidden = true; // Hide by default
+
+
         const commentsTitle = document.createElement("h3");
         commentsTitle.textContent = "💬Comments:";
+        
         commentsElement.appendChild(commentsTitle);
 
         if (comments.length > 0) {
             comments.forEach(comment => {
                 const commentElement = document.createElement("p");
                 const commentUser = document.createElement("strong");
+                //const count = document.createElement("p");
                 commentUser.textContent = `${comment.user.username}: `;
                 commentElement.appendChild(commentUser);
                 commentElement.appendChild(document.createTextNode(comment.body));
                 const commentLikes = document.createElement("strong");
                 commentLikes.textContent = ` 👍${comment.likes}`;
+                //count.innerText = comments.length
                 commentElement.appendChild(commentLikes);
                 commentsElement.appendChild(commentElement);
+                //commentsElement.append(count)             
             });
         } else {
             const noCommentsElement = document.createElement("p");
@@ -329,6 +350,12 @@ document.addEventListener("DOMContentLoaded", function () {
             ageElement.appendChild(ageLabel);
             ageElement.appendChild(document.createTextNode(user.age));
 
+            const heightElement = document.createElement("p")
+            const heightLabel = document.createElement("strong");
+            heightLabel.textContent = "Height: ";
+            heightElement.appendChild(heightLabel);
+            heightElement.appendChild(document.createTextNode(user.height));
+
             const genderElement = document.createElement("p");
             const genderLabel = document.createElement("strong");
             genderLabel.textContent = "Gender: ";
@@ -342,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
             userDetails.appendChild(phoneElement);
             userDetails.appendChild(ageElement);
             userDetails.appendChild(genderElement);
+            userDetails.appendChild(heightElement);
 
             modal.style.display = "block";
         } else {

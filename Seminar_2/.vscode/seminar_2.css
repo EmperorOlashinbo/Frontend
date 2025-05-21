@@ -275,8 +275,8 @@ nav ul li a.active {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: black;
     padding: 10px;
     border-radius: 50%;
     text-align: center;
@@ -286,7 +286,7 @@ nav ul li a.active {
 }
 
 .back-to-top:hover {
-    background-color: #555;
+    background-color: whitesmoke;
 }
 article{
     text-align: left !important;
